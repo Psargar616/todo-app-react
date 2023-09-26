@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import "./List.css";
 
-import TodoItem from "./TodoItem"
+import TodoItem from "./TodoItem";
 
 // Context
 import TodoContext from "../context/TodoContext";
@@ -53,11 +53,14 @@ const List = () => {
 
   return (
     <div className="list_container">
-      {todoList.length > 0
+    {/* mapping each todolist items to  TodoItem component*/}
+      {
+        todoList.length > 0
         ? todoList.map((item) => {
             return <TodoItem key={item.id} todoItem={item} />;
           })
-        : null}
+        : null
+        }
 
       <div className="list_footer">
         <div className="footer1"> {`${todoCount}`} items left</div>

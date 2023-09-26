@@ -9,13 +9,15 @@ import darkBg from "../images/bg-desktop-dark.jpg";
 
 
 const Home = () => {
+
+  // handleIcon to add dark theme to webpage
   const handleIcon = () => {
     let moon = document.querySelector("#moon");
     let sun = document.querySelector("#sun");
     let theme = document.querySelector(".main-container");
     let lightBg = document.querySelector("#light-bg");
     let darkBg = document.querySelector("#dark-bg");
-
+  // toggle  "hidden" class
     moon.classList.toggle("hidden");
     sun.classList.toggle("hidden");
     theme.classList.toggle("dark");
@@ -30,6 +32,7 @@ const Home = () => {
         src={lightBg}
         alt="home image light"
       />
+      {/* dark bg image is hidden */}
       <img
         className="homepage-image hidden"
         id="dark-bg"
@@ -42,10 +45,11 @@ const Home = () => {
           <h1 className="title">todo</h1>
           <div className="theme_icon">
             <Moon id="moon" onClick={() => handleIcon()} />
+            {/* sun icon is hidden */}
             <Sun id="sun" className="hidden" onClick={() => handleIcon()} />
           </div>
         </div>
-
+        {/* input and list components */}
         <Input />
         <List />
       </div>

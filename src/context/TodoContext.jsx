@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from "react";
 
+// creating context
 const TodoContext = React.createContext();
 
+// provider
 export const TodoProvider = ({ children }) => {
   const [todoItems, setTodoItems] = useState([]);
 
   const [todoCount, setTodoCount] = useState(0);
-
+  
+  // updating count value
   const handleTodoCount = () => {
     let newCount = todoItems.filter((item) => item.isActive === true);
     setTodoCount(newCount.length);
@@ -25,10 +28,12 @@ export const TodoProvider = ({ children }) => {
   };
 
   const removeTodoItem = (todoItemToRemove) => {
-    // find the item to remove
+    // finding the item to remove using id
     const existingItem = todoItems.find(
       (item) => item.id === todoItemToRemove.id
     );
+
+    // removing the item and updating newTodoItems
 
     if (existingItem) {
       const newTodoItems = todoItems.filter(
@@ -38,15 +43,18 @@ export const TodoProvider = ({ children }) => {
     }
   };
 
+
+  // clearing comleted items based on 'isActive'
   const clearCompleted = () => {
     let newTodoItems = todoItems.filter((item) => item.isActive === true);
     setTodoItems(newTodoItems);
   };
 
   useEffect(() => {
-    // update count
+    // updating count
     handleTodoCount();
   }, [todoItems]);
+  // passing functions and states
   return (
     <TodoContext.Provider
       value={{

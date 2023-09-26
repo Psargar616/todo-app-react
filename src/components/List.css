@@ -1,11 +1,9 @@
 .list_container {
   background-color: var(--color-very-light-grayish-blue);
-
   width: 100%;
   margin-top: 5%;
   border-radius: 1rem;
   overflow: hidden;
-
   border: 4px solid whitesmoke;
 }
 
@@ -17,7 +15,6 @@
 .list_footer {
   width: 100%;
   padding: 2rem;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -35,7 +32,6 @@
 
 .footer2 {
   font-size: 1.6rem;
-
   display: flex;
 }
 
@@ -57,6 +53,11 @@
   color: var(--color-dark-grayish-blue);
   font-size: 1.6rem;
   cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+
+.footer3:hover{
+  font-weight: bold;
 }
 
 .main-container.dark .footer3 {

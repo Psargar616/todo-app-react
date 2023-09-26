@@ -1,12 +1,12 @@
 .homepage-container {
-  height: 100%;
-  width: 100%;
-
+  height: 100vh;
+  width: 100vw;
   background-repeat: none;
   background-position: center;
   background-size: cover;
 }
 
+/* dark theme */
 .main-container.dark .homepage-container {
   background-color: var(--color-very-dark-blue);
 }
@@ -15,16 +15,16 @@
   display: block;
 }
 
+/* placing todo container */
 .todocontainer {
   background-color: transparent;
   position: absolute;
-  min-height: 20%;
-  max-width: 35%;
+  min-height: 22%;
+  max-width: 37%;
   margin: 0 auto;
   top: 10%;
   left: 0;
   right: 0;
-
   display: flex;
   flex-direction: column;
 }
@@ -33,16 +33,35 @@
   display: flex;
   justify-content: space-between;
 }
+
 .title {
   color: var(--color-very-light-grayish-blue);
   text-transform: uppercase;
-  font-size: 4rem;
+  font-size: 4.2rem;
   letter-spacing: 1rem;
+  cursor: pointer;
+}
+
+
+.title:hover{
+   text-shadow: 4px 3px 0px #fff, 9px 8px 0px rgba(0,0,0,0.15);
+   text-shadow: 
+   1px 0px 1px #ccc, 0px 1px 1px #eee, 
+   2px 1px 1px #ccc, 1px 2px 1px #eee,
+   3px 2px 1px #ccc, 2px 3px 1px #eee,
+   4px 3px 1px #ccc, 3px 4px 1px #eee,
+   5px 4px 1px #ccc, 4px 5px 1px #eee,
+   6px 5px 1px #ccc, 5px 6px 1px #eee,
+   7px 6px 1px #ccc;
 }
 
 .theme_icon {
   cursor: pointer;
+  font-size: 4.2rem;
 }
+
+
+
 
 .hidden {
   display: none;

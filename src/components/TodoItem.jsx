@@ -13,11 +13,14 @@ const TodoItem = ({ todoItem }) => {
   const checkList = (todoItemSelected) => {
     let todoCircle = document.querySelector(
       `#todo-icon-${todoItemSelected.id}`
+      
     );
+    console.log(todoCircle);
     let check = document.querySelector(`#check-${todoItemSelected.id}`);
     let todoItemTitle = document.querySelector(
       `#todo-item-${todoItemSelected.id}`
     );
+    // toggling to add checked img and line through text
     todoCircle.classList.toggle("checked");
     check.classList.toggle("hidden");
     todoItemTitle.classList.toggle("checked");
@@ -29,7 +32,7 @@ const TodoItem = ({ todoItem }) => {
       todoItemSelected.isActive = true;
     }
 
-    // Update the count on click
+    // Updating the count on click
     handleTodoCount();
   };
 
@@ -40,12 +43,15 @@ const TodoItem = ({ todoItem }) => {
     <div className="todoitem_container">
       <div className="todo_items" onClick={() => checkList(todoItem)}>
         <div className="todo-icon" id={`todo-icon-${todoItem.id}`}>
+        {/* initially hide checked img */}
+       
           <Check id={`check-${todoItem.id}`} className="hidden" />
         </div>
         <div className="todo-item" id={`todo-item-${todoItem.id}`}>
           {todoItem.title}
         </div>
       </div>
+      {/* delete function */}
       <Cross className="cross" onClick={() => handleDelete(todoItem)} />
     </div>
   );

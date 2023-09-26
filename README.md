@@ -13,7 +13,7 @@
 - ReactJS
 
 ## New Learnings
-- useContext()
+- Handli state management using react useContext() 
 - useState()
 - useEffect()
 - ReactComponents
